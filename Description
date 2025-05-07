@@ -1,0 +1,61 @@
+🔁 Project Workflow
+This project demonstrates an AI-powered object detection system that responds interactively to what it sees using a camera feed. Here's how the system works:
+
+1. Start Webcam Feed
+The system accesses your webcam using OpenCV.
+
+Each video frame is passed to the YOLOv8 model for analysis.
+
+2. Real-Time Object Detection
+The YOLOv8 model detects objects in real-time with bounding boxes and confidence scores.
+
+Only objects with confidence > 0.3 are considered valid for further processing.
+
+3. Filter and Extract Unique Detections
+For each valid frame:
+
+Extract unique object names and their confidence scores.
+
+Append the current timestamp.
+
+4. Trigger AI Actions
+A set of predefined AI actions are linked to specific detected objects.
+
+For example:
+
+person → "Need assistance?"
+
+laptop → "Would you like to open your work dashboard?"
+
+tv → "Shall I turn on Netflix?"
+
+These actions are spoken aloud using the pyttsx3 text-to-speech engine.
+
+5. Log to Excel File
+Each detection is logged in an Excel file detailed_object_log_with_actions.xlsx.
+
+Columns include:
+
+Object
+
+Confidence
+
+Timestamp
+
+AI Action
+
+If the file doesn't exist, it's created automatically.
+
+If it exists, it's updated with new rows.
+
+✅ Summary of What This Project Does
+🎯 Uses YOLOv8 for accurate object detection in video feed.
+
+🧠 Associates each detection with a smart AI action.
+
+🗣️ Speaks the action using text-to-speech.
+
+📊 Logs detailed detection results in a structured Excel file.
+
+🔁 Continuously processes the webcam feed until manually stopped (e.g., pressing q).
+
